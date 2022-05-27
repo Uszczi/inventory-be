@@ -35,5 +35,5 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           sudo apt install ansible
-          sudo apt install openssh
+          sudo apt install openssh-server
           sudo apt install sshpass
