@@ -1,2 +1,7 @@
 [mikrus]
-root@srv08.mikr.us:10608
+srv08.mikr.us
+
+[mikrus:vars]
+ansible_port={{ mikrus_port }}
+ansible_user=root
+ansible_password={{ mikrus_pass }}
