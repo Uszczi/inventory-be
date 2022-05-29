@@ -38,5 +38,5 @@ jobs:
           sudo apt install openssh-server
           sudo apt install sshpass
           cd ansible
-          echo skarb >> secret
+          echo {{ secret.ANSIBLE_VAULT_PASS }} >> secret
           ansible -e @secrets.yml  --vault-password-file secret -m ping mikrus
