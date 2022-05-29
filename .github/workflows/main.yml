@@ -34,8 +34,7 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          sudo apt install openssh-server
-          sudo apt install sshpass
-
-          sshpass -p ${{  secrets.MIKRUS_PASSWORD }} ssh ${{ secrets.MIKRUS_IP}} -p ${{secrets.MIKRUS_PORT}}
-          echo "dsfa" >> loggg
+          sudo apt install ansible openssh-server sshpass
+          cd ansible
+          echo ${{ secrets.ANSIBLE_VAULT_PASS }} >> secret
+          ansible -e @secrets.yml  --vault-password-file secret -m ping mikrus
