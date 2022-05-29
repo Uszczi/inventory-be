@@ -1,8 +1,8 @@
 
 ###############################
-#						      #
+#                             #
 #      Requirements           #
-#							  #
+#                             #
 ###############################
 install-piptools:
 	python -m pip install pip-tools
