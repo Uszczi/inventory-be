@@ -37,5 +37,5 @@ jobs:
           sudo apt install openssh-server
           sudo apt install sshpass
 
-          sshpass -p ${{  secrets.MIKRUS_PASSWORD }} ${{ secrets.MIKRUS_IP}} -p ${{secrets.MIKRUS_PORT}}
+          sshpass -p ${{  secrets.MIKRUS_PASSWORD }} ssh ${{ secrets.MIKRUS_IP}} -p ${{secrets.MIKRUS_PORT}}
           echo "dsfa" >> loggg
