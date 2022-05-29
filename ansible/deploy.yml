@@ -1,0 +1,14 @@
+---
+- name: Network Getting Started First Playbook
+  hosts: mikrus
+  tasks:
+    - name: Download latest image
+      command: docker pull uszczi/inventory_be
+    - name: Stop old container
+      command: docker stop inventory-be
+      ignore_errors: yes
+    - name: Remove old container
+      command: docker container rm inventory-be
+      ignore_errors: yes
+    - name: Start new container
+      command: docker run -p 8010:8010 --name inventory-be uszczi/inventory_be

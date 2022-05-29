@@ -38,3 +38,4 @@ jobs:
           cd ansible
           echo ${{ secrets.ANSIBLE_VAULT_PASS }} >> secret
           ansible -e @secrets.yml  --vault-password-file secret -m ping mikrus
+          ansible-playbook -e @secrets.yml  --vault-password-file secret deploy.yml
