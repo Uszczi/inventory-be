@@ -10,6 +10,7 @@ on:
 jobs:
   build_and_push:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
     # TODO add pip cache and check timing
     steps:
@@ -26,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run a multi-line script
+      - name: Trigger deploy via Ansible
         run: |
           sudo apt install ansible openssh-server sshpass
           cd ansible
