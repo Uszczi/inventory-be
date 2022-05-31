@@ -2,6 +2,7 @@ APP_PATH=src/inv
 
 run:
 	cd ${APP_PATH}/main && uvicorn app:app --reload --lifespan=off --host 0.0.0.0 --port 8080
+
 ###############################
 #                             #
 #      Requirements           #
@@ -21,3 +22,12 @@ recompile-deps: install-piptools
 sync-deps: install-piptools
 	python -m piptools sync "requirements/dev.txt"
 	python -m pip install -e .
+
+##################
+### Migrations ###
+##################
+makemigrations:
+	cd ${APP_PATH}/models/alembic; alembic revision --autogenerate
+
+migrate:
+	cd ${APP_PATH}/models/alembic; alembic upgrade head

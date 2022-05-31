@@ -3,4 +3,14 @@ services:
   web:
     build: .
     ports:
-      - "8000:8000"
+      - "8080:8080"
+  db:
+    container_name: map_app_db
+    image: library/postgres:12.3
+    ports:
+      - "5544:5544"
+    environment:
+      - POSTGRES_DB=inv
+      - POSTGRES_USER=inv
+      - POSTGRES_PASSWORD=inv
+      - PGPORT=5544
