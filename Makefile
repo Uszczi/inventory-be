@@ -1,7 +1,7 @@
 APP_PATH=src/inv
 
 run:
-	cd ${APP_PATH}/main && uvicorn app:app --reload --lifespan=off --host 0.0.0.0 --port 8080
+	cd ${APP_PATH}/main && uvicorn app:app --reload --lifespan=off --host 0.0.0.0 --port 8010
 
 ###############################
 #                             #

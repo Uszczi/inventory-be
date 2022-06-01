@@ -9,8 +9,6 @@ def hello_world():
     return {"hello":"world"}
 
 origins = [
-    "http://localhost",
-    "http://localhost:8080",
     "*",
 ]
 
@@ -22,3 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}

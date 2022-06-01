@@ -1,11 +1,14 @@
 version: "3.3"
 services:
   web:
-    build: .
+    container_name: inv
+    build:
+      context: ../
+      dockerfile: ./deployment/Dockerfile
     ports:
-      - "8080:8080"
+      - "8010:8010"
   db:
-    container_name: map_app_db
+    container_name: inv_db
     image: library/postgres:12.3
     ports:
       - "5544:5544"
