@@ -1,6 +1,7 @@
 FROM python:3.10
-WORKDIR /code
-COPY ./requirements/dev.txt /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+WORKDIR /app
+COPY ./requirements/dev.txt /app/requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY . .
+RUN make sync-deps
 CMD ["make", "run"]

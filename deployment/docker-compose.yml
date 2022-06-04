@@ -2,8 +2,12 @@ version: "3.3"
 services:
   web:
     container_name: inv
+    volumes:
+      - type: bind
+        source: ../
+        target: /app
     build:
-      context: ../
+      context: ..
       dockerfile: ./deployment/Dockerfile
     ports:
       - "8010:8010"
