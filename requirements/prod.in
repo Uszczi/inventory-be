@@ -1,2 +1,5 @@
 uvicorn
 fastapi
+alembic
+# Needed for alembic
+psycopg2-binary

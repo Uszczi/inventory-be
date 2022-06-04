@@ -1,3 +1,5 @@
+alembic==1.8.0
+    # via -r requirements/./prod.in
 ansible==5.8.0
     # via -r requirements/dev.in
 ansible-core==2.12.6
@@ -14,16 +16,24 @@ cryptography==37.0.2
     # via ansible-core
 fastapi==0.78.0
     # via -r requirements/./prod.in
+greenlet==1.1.2
+    # via sqlalchemy
 h11==0.13.0
     # via uvicorn
 idna==3.3
     # via anyio
 jinja2==3.1.2
     # via ansible-core
+mako==1.2.0
+    # via alembic
 markupsafe==2.1.1
-    # via jinja2
+    # via
+    #   jinja2
+    #   mako
 packaging==21.3
     # via ansible-core
+psycopg2-binary==2.9.3
+    # via -r requirements/./prod.in
 pycparser==2.21
     # via cffi
 pydantic==1.9.1
@@ -36,6 +46,8 @@ resolvelib==0.5.4
     # via ansible-core
 sniffio==1.2.0
     # via anyio
+sqlalchemy==1.4.37
+    # via alembic
 starlette==0.19.1
     # via fastapi
 typing-extensions==4.2.0
