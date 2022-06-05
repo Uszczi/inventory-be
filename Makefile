@@ -6,6 +6,9 @@ app:
 run:
 	cd src/inv && uvicorn inv.main.asgi:app --reload --lifespan=off --host 0.0.0.0 --port 8010
 
+run-debug:
+	cd src/inv && debugpy --listen 0.0.0.0:5678 --wait-for-client -m uvicorn inv.main.asgi:app --reload --lifespan=off --host 0.0.0.0 --port 8010
+
 ###############################
 #                             #
 #      Requirements           #

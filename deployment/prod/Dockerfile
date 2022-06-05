@@ -5,4 +5,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY . .
 RUN make sync-deps
 RUN chmod +x ./deployment/prod/start.sh
-cmd ["start.sh"]
+CMD ["./deployment/prod/start.sh"]

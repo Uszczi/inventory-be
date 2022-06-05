@@ -1,0 +1,24 @@
+version: "3.3"
+services:
+  web:
+    container_name: inv
+    env_file: .env
+    volumes:
+      - type: bind
+        source: ../..
+        target: /app
+    build:
+      context: ../..
+      dockerfile: ./deployment/Dockerfile
+    ports:
+      - "8010:8010"
+  db:
+    container_name: inv_db
+    image: library/postgres:12.3
+    ports:
+      - "5544:5544"
+    environment:
+      - POSTGRES_DB=inv
+      - POSTGRES_USER=inv
+      - POSTGRES_PASSWORD=inv
+      - PGPORT=5544
