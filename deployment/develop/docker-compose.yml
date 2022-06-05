@@ -5,10 +5,10 @@ services:
     env_file: .env
     volumes:
       - type: bind
-        source: ../
+        source: ../..
         target: /app
     build:
-      context: ..
+      context: ../..
       dockerfile: ./deployment/Dockerfile
     ports:
       - "8010:8010"
