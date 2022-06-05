@@ -1,2 +1,3 @@
-  make migrate
-  make run
+#!/bin/bash
+make migrate
+make run

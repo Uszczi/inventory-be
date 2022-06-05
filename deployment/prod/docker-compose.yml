@@ -9,7 +9,7 @@ services:
         target: /app
     build:
       context: ../..
-      dockerfile: ./deployment/Dockerfile
+      dockerfile: ./deployment/prod/Dockerfile
     ports:
       - "8010:8010"
   db:

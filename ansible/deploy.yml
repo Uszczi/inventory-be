@@ -8,7 +8,7 @@
       command: docker stop inventory-be
       ignore_errors: yes
     - name: Remove old container
-      command: docker container rm inventory-be
+      command: docker container rm inventory_be
       ignore_errors: yes
     - name: Start new container
       command: docker run -p 8010:8010 --name inventory-be uszczi/inventory_be
