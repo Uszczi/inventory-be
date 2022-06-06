@@ -10,11 +10,13 @@
       command: docker stop inv
       args:
         chdir: /root/inventory-be
+      ignore_errors: yes
     - name: pwd
       command: docker container rm  inv
+      ignore_errors: yes
       args:
         chdir: /root/inventory-be
     - name: pwd
-      command: docker-compose -f deployment/prod/docker-compose.yml up inv -d
+      command: docker-compose -f deployment/prod/docker-compose.yml up -d inv
       args:
         chdir: /root/inventory-be
