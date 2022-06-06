@@ -1,7 +1,7 @@
 APP_PATH=src/inv
 
 app:
-	docker-compose -f deployment/docker-compose.yml up
+	docker-compose -f deployment/develop/docker-compose.yml up
 
 run:
 	cd src/inv && uvicorn inv.main.asgi:app --reload --lifespan=off --host 0.0.0.0 --port 8010
