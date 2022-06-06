@@ -29,6 +29,10 @@ sync-deps: install-piptools
 	python -m piptools sync "requirements/dev.txt"
 	python -m pip install -e .
 
+sync-deps-prod: install-piptools
+	python -m piptools sync "requirements/dev.txt"
+	python -m pip install -e .
+
 ##################
 ### Migrations ###
 ##################

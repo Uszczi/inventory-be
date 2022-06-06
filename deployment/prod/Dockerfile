@@ -3,6 +3,6 @@ WORKDIR /app
 COPY ./requirements/prod.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 COPY . .
-RUN make sync-deps
+run 	python -m pip install -e .
 RUN chmod +x ./deployment/prod/start.sh
 CMD ["./deployment/prod/start.sh"]
