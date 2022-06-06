@@ -8,18 +8,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  build_and_push:
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
-    # TODO add pip cache and check timing
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build the Docker image
-        run: |
-          docker login -u ${{ secrets.DOCKER_HUB_USER }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
-          docker build -f ./deployment/prod/Dockerfile --tag uszczi/inventory_be  .
-          docker push uszczi/inventory_be
+  # build_and_push:
+  #   runs-on: ubuntu-latest
+  #   if: github.ref == 'refs/heads/main'
+  #
+  #   # TODO add pip cache and check timing
+  #   steps:
+  #     - uses: actions/checkout@v3
+  # - name: Build the Docker image
+  #   run: |
+  #     docker login -u ${{ secrets.DOCKER_HUB_USER }} -p ${{ secrets.DOCKER_HUB_TOKEN }}
+  #     docker build -f ./deployment/prod/Dockerfile --tag uszczi/inventory_be  .
+  #     docker push uszczi/inventory_be
 
   deploy:
     needs: [build_and_push]
