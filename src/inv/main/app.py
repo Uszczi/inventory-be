@@ -7,7 +7,9 @@ from inv.views.commands.fill_movies import router as commands_router
 
 
 def get_app():
-    app = FastAPI()
+    app = FastAPI(
+        docs_url="/api/docs", redoc_url="/api/redoc", openapi_url="/api/openapi.json"
+    )
 
     origins = [
         "*",
